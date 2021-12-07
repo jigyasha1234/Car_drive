@@ -19,3 +19,28 @@ Btn.addEventListener('click',()=>{
 function remove(elem){
     elem.remove();
 }
+
+async function getUsers() {
+    let url = 'https://jsonplaceholder.typicode.com/todos'
+    let res = await fetch(url);
+    return await res.json();
+    }
+async function renderUsers() {
+    let users = await getUsers();
+    let ul0 = document.getElementsByClassName('list0')[0];
+    let ul1 = document.getElementsByClassName('list1')[0];
+    users.forEach(user => {
+        let l = document.createElement('li');
+        console.log(user.completed);
+        if (user.completed === true){
+            l.textContent = user.title;
+            ul0.append(l);
+        }
+        else{
+            l.textContent = user.title;
+            ul1.append(l);
+        }
+    });
+
+}
+renderUsers();

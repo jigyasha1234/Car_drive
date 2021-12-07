@@ -1,13 +1,45 @@
 <html>
     <head>
         <title>Todo List</title>
+        <style>
+            *{
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                font-size: large;
+            }
+            .div1,.div2{
+
+                  display: inline-flex;
+                  margin-top: 100px;
+            }
+            .div1{
+                background-color: rgb(136, 175, 109);
+                width: 49%;
+            }
+            .div2{
+                background-color: rgb(136, 175, 109);
+                width: 49%;
+            }
+            h1{
+                padding: 10%;
+            }
+        </style>
     </head>
     <body>
         <div>
             <input  type='text' name='todo_input'>
             <button type='submit'>Add Todo</button>
             <div class='todos'></div>
-        </div>
+            <section>
+                <div class="div1">
+                    <h1>completed</h1>
+                    <ul class="list0"></ul>
+                </div>
+                <div class="div2">
+                    <h1>not completed</h1>
+                    <ul class="list1"></ul>
+                </div>
+            </div>
+            </section>
     </body>
     <script src='./script.js'></script>
 </html> 
